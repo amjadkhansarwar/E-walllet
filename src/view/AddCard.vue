@@ -12,6 +12,9 @@
         <input type="number" placeholder=" XXXX-XXXX-XXXX-XXXX " 
          v-model.number="card.cardnumber"
           required>
+            <span v-if="errors.length">
+            <li v-for="(error,index) in errors" :key="index">{{ error }}</li>
+            </span>
         <span> CARDHOLDER NAME</span>
         <input type="text" onkeypress="return /[a-z]/i.test(event.key)" 
         placeholder="FRISTNAME  LASTNAME"
@@ -58,11 +61,12 @@ export default {
                 vendor: '',
             },
             vendorname:
-            ['bitcoin','ninja','blockchain','evil'],
+            ['Bitcoin','Ninja','Blockchain','Evil'],
             monthname:
             ['01','02','03','04','05','06','07','08','09','10','11','12'],
             yearname:
             ['22','23','24','25'],
+            errors:[],
       }
     
     },
@@ -75,8 +79,9 @@ export default {
         submit(){
             let validcard =this.card.cardnumber
             validcard = validcard.toString().length
+            this.errors = []
             if(validcard < 16 || validcard > 16 ){
-            alert('You just put '+ validcard +' digits. Please add 16 digits')
+            this.errors.push('You just put '+ validcard +' digits. Please add 16 digits')
             return
             }
             this.$emit('send',{...this.card} )
@@ -115,7 +120,7 @@ label{
     grid-column-start: 2;
     grid-column-end: 3;
 }
-input, .select, button{
+input, .select, button, span{
     grid-column-start: 1;
     grid-column-end: 3;
  }
@@ -131,4 +136,7 @@ input, .select, button{
         color: white;
         background-color: black;
 } 
+li{
+    color: red;
+}
 </style>

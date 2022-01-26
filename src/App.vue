@@ -63,23 +63,23 @@ export default {
            return 
          }
        }
-          // let counter =0
-          // let i = 0
-          // for ( i = 0; i < nycount.length; i++) {
-          // if (nycount[i].vendor) 
-          // counter++;
-          // }
-          // if(counter >= 4)
-          // {
-          // alert("Your limt of cards in wallet is full now. you want to Uppdate  first one card and save this one")
-          // // alert(cardData.vendor)
-          // // alert(nycount)
-          // const result = nycount.filter(word => word.vendor != cardData.vendor);
-          // //alert(result)
-          // this.card = result
-          // // alert(this.card)
-          // sendDataLocalStorage(this.card)
-          // }
+          let counter =0
+          let i = 0
+          for ( i = 0; i < nycount.length; i++) {
+          if (nycount[i].vendor) 
+          counter++;
+          }
+          if(counter >= 4)
+          {
+          alert("Your limt of cards in wallet is full now. you want to Uppdate  first one card and save this one")
+          // alert(cardData.vendor)
+          // alert(nycount)
+          const result = nycount.filter(word => word.vendor != cardData.vendor);
+          //alert(result)
+          this.card = result
+          // alert(this.card)
+          sendDataLocalStorage(this.card)
+          }
        //alert(counter)
         }
       this.card.push({

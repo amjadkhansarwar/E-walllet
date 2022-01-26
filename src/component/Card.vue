@@ -56,28 +56,28 @@ export default {
  grid-column-start: 1;
   grid-column-end: 3;
 }
-.bitcoin{
+.Bitcoin{
     background-color: #ffb74a;
 }
-.evil{
+.Evil{
     background-color: #d72d4b;
 }
-.ninja{
+.Ninja{
     background-color: #3a3a3a;
 }
-.blockchain{
+.Blockchain{
     background-color: #7D4FE0;
 }
-.evil .image2{
-    content:url("../assets/evil.svg");
+.Evil .image2{
+    content:url("../assets/Evil.svg");
 }
-.ninja .image2{
-    content:url("../assets/ninja.svg");
+.Ninja .image2{
+    content:url("../assets/Ninja.svg");
 }
-.bitcoin .image2{
-    content:url("../assets/bitcoin.svg");
+.Bitcoin .image2{
+    content:url("../assets/Bitcoin.svg");
 }
-.blockchain .image2{
-    content:url("../assets/blockchain.svg");
+.Blockchain .image2{
+    content:url("../assets/Blockchain.svg");
 }
 </style>
