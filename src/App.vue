@@ -32,6 +32,7 @@ export default {
         month:'',
         year: '',
         vendor:'',
+        
     }
   },
   computed:{

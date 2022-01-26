@@ -10,11 +10,11 @@
         <div class="container">
         <span>  CARD NUMBER</span>
         <input type="number" placeholder=" XXXX-XXXX-XXXX-XXXX " 
-         v-model.number="card.cardnumber"
-          required>
-            <span v-if="errors.length">
-            <li v-for="(error,index) in errors" :key="index">{{ error }}</li>
-            </span>
+        v-model.number="card.cardnumber"
+        required>
+        <span v-if="errors.length">
+        <li v-for="(error,index) in errors" :key="index">{{ error }}</li>
+        </span>
         <span> CARDHOLDER NAME</span>
         <input type="text" onkeypress="return /[a-z]/i.test(event.key)" 
         placeholder="FRISTNAME  LASTNAME"
@@ -52,8 +52,7 @@ export default {
     },
     data(){
         return{
-            card:
-            {
+            card:{
                 cardnumber:'',
                 name:'',
                 month:'',

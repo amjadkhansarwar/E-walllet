@@ -57,7 +57,7 @@ export default {
 <style scoped>
 .activeCard{
     display: grid;
-    width: 33rem;
+    width: 414px;
     justify-content: center;
     grid-template-rows: auto;
     background-color: white; 
@@ -82,6 +82,7 @@ h1, p{
     align-self: center;
     height: 72PX;
     margin-top: 6rem;
+    margin-bottom: 1rem;
     border-radius: 8px;
     color: white;
     font-weight: bold;

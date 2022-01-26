@@ -19,14 +19,15 @@ export default {
         data(){
             return{
                 activetab: 1,
-                card:[],
+                card:{
                 cardnumber:'',
                 name:'',
                 month:'',
                 year: '',
-                vendor:'',
+                vendor:''
+            }
           }
-    },
+    }
 }
 </script>
 
