@@ -1,6 +1,6 @@
 <template>
   <div class="container" id="card" :class="cardProp.vendor">
-      <img class="image1" :src="require('../assets/wifi.svg')" alt="" >
+      <img class="image1" :src="require('../assets/wifi_white.svg')" alt="" >
       <img class="image2"   id="img" width="40" height="40">
       <img class="image3" :src="require('../assets/chip.svg')" alt=""   width="40" height="40">
       <h3 class="cardNumber">{{cardProp.cardnumber}}</h3>
@@ -34,6 +34,7 @@ export default {
 .container{
     display: grid;
     border-radius: 8px;
+    color: white;
     width: 382px;
     height: 250px;
     margin-bottom: 1rem;
@@ -47,6 +48,9 @@ export default {
 .image1, .image3 {
     padding-left: 1rem;
     justify-self: start;
+}
+.image3{
+    /* background-color: white; */
 }
 .image2{
     justify-self: end;
