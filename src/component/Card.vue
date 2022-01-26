@@ -27,15 +27,6 @@ export default {
                 vendor:'',
           }
     },
-    methods:{
-        // // getimgurl(img){
-        // //     if(img){
-        // //         var images = require.context('../assets/', false, /\.svg$/)
-        // //         return images('./' + img + ".svg")
-        // //     }
-        // }
-    },
-
 }
 </script>
 
