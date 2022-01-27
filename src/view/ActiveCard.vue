@@ -14,7 +14,7 @@
         <!-- Here i am cllaing component -->
         <Card :cardProp="cardList(index)"/>
         </div>
-        <button  class="addcard" @click="activetab" > ADD NEW CARD</button>
+        <button  class="addcard" @click="activeViewfunction" > ADD NEW CARD</button>
         </div>
 </template>
 
@@ -28,13 +28,13 @@ export default {
     data(){
         return{
             backgroundColor: '' ,
-            activeTab: '',
+            activeView: '',
             activeCard : 0,
         }
     },
     methods:{
-        activetab(){
-            this.$emit('sendtab',{...this.activeTab} )
+        activeViewfunction(){
+            this.$emit('sendViewData',{...this.activeView} )
         },
         activCardProp(activeCard){
              this.activeCard

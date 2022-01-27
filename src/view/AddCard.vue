@@ -6,6 +6,7 @@
         <!-- this is child  -->
      <Card :cardProp="cardProp"/>
     </div>
+    <!-- this is a form -->
     <form @submit.prevent="submit">
         <div class="container">
         <span>  CARD NUMBER</span>
@@ -80,7 +81,7 @@ export default {
             validcard = validcard.toString().length
             this.errors = []
             if(validcard < 16 || validcard > 16 ){
-            this.errors.push('You just put '+ validcard +' digits. Please add 16 digits')
+            this.errors.push('You put '+ validcard +' digits. Please add 16 digits')
             return
             }
             this.$emit('send',{...this.card} )

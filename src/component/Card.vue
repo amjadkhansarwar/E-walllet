@@ -18,7 +18,7 @@ export default {
         ],
         data(){
             return{
-                activetab: 1,
+                activeView: 1,
                 card:{
                 cardnumber:'',
                 name:'',
