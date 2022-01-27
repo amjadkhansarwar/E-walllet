@@ -70,7 +70,7 @@ export default {
               return 
               }
             }
-                    //  Deleteing duplicate card with respect to vendor
+                    //  Uppdate card or Deleteing duplicate card with respect to vendor
                 // let counter =0
                 // let i = 0
                 // for ( i = 0; i < nycount.length; i++) {
@@ -106,6 +106,6 @@ export default {
 #app{
   display: grid;
   justify-content: center;
-  background-color: cadetblue;
+  background-color: gray;
 }
 </style>

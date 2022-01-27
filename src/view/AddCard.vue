@@ -12,6 +12,7 @@
         <span>  CARD NUMBER</span>
         <input type="number" placeholder=" XXXX-XXXX-XXXX-XXXX " 
         v-model.number="card.cardnumber"
+        pattern="[0-9]{16}"
         required>
         <span v-if="errors.length">
         <li v-for="(error,index) in errors" :key="index">{{ error }}</li>
@@ -20,7 +21,7 @@
         <input type="text" onkeypress="return /[a-z]/i.test(event.key)" 
         placeholder="FRISTNAME  LASTNAME"
         v-model="card.name" 
-        required>
+        style="text-transform:uppercase" required>
         <span> MONTH</span>
         <label> YEAR</label>
         <select v-model="card.month"  class="halfrow" required>

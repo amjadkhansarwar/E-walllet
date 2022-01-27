@@ -15,6 +15,7 @@
         <Card :cardProp="cardList(index)"/>
         </div>
         <button  class="addcard" @click="activeViewfunction" > ADD NEW CARD</button>
+        <!-- <button  class="addcard" > DELETE CARD</button> -->
         </div>
 </template>
 
