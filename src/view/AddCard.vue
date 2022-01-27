@@ -11,8 +11,8 @@
         <div class="container">
         <span>  CARD NUMBER</span>
         <input type="number" placeholder=" XXXX-XXXX-XXXX-XXXX " 
-        v-model.number="card.cardnumber"
-        pattern="[0-9]{16}"
+        v-model="card.cardnumber"
+        pattern="[0-9]"
         required>
         <span v-if="errors.length">
         <li v-for="(error,index) in errors" :key="index">{{ error }}</li>
@@ -121,7 +121,7 @@ label{
     grid-column-start: 2;
     grid-column-end: 3;
 }
-input, .select, button, span{
+input, .select, button, li{
     grid-column-start: 1;
     grid-column-end: 3;
  }

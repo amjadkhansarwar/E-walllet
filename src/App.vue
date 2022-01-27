@@ -27,15 +27,13 @@ export default {
         //localStorage.removeItem("cardData");
         return{
           activeView: 1,
-          card:[
-            {
-            cardnumber:'2222 3333 4444 5555',
-            name:'Amjad',
-            month:'09',
-            year: '22',
-            vendor:'Evil',
-            }
-            ],
+          card:[],
+            cardnumber:'',
+            name:'',
+            month:'',
+            year: '',
+            vendor:'',
+            
         }
       },
       computed:{
@@ -70,20 +68,20 @@ export default {
               return 
               }
             }
-                    //  Uppdate card or Deleteing duplicate card with respect to vendor
-                // let counter =0
-                // let i = 0
-                // for ( i = 0; i < nycount.length; i++) {
-                // if (nycount[i].vendor) 
-                // counter++;
-                // }
-                // if(counter >= 4)
-                // {
-                // alert("Your limt of cards in wallet is full now. you want to Uppdate  first one card and save this one")
-                // const result = nycount.filter(word => word.vendor != cardData.vendor);
-                // this.card = result
-                // sendDataLocalStorage(this.card)
-                // }
+                    //  Uppdate card orDeleteing duplicate card with respect to vendor
+                let counter =0
+                let i = 0
+                for ( i = 0; i < nycount.length; i++) {
+                if (nycount[i].vendor) 
+                counter++;
+                }
+                if(counter >= 4)
+                {
+                alert("Your limt of cards in wallet is full now. you want to Uppdate  first one card and save this one")
+                const result = nycount.filter(word => word.vendor != cardData.vendor);
+                this.card = result
+                sendDataLocalStorage(this.card)
+                }
           }
            // Adding Data in local storage
 

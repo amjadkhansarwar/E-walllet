@@ -30,7 +30,7 @@ export default {
         return{
             backgroundColor: '' ,
             activeView: '',
-            activeCard : 0,
+            activeCard : 1,
         }
     },
     methods:{
