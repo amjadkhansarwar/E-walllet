@@ -1,21 +1,18 @@
 <template>
         <div class="activeCard">
         <h1>E WALLET</h1>
-        <p>ACTIVE CARD</p>
-        <div class="active">
-            <!-- Here i am cllaing component -->
-        <Card :cardProp="activCardProp(activeCard)"/>
-        </div>
+        <p>CLICK ON CARD THAT YOU WANT TO DELETE</p>
+        
         <!-- this loop is to show all card -->
         <div class="list" v-for="(data, index) in
         created" v-bind:key="index"
-        v-on:click="showCard(index)"
+        v-on:click="deletecard(index)"
         > 
         <!-- Here i am cllaing component -->
         <Card :cardProp="cardList(index)"/>
         </div>
         <button class="addbutton" @click="activeAddcardView" > ADD NEW CARD</button>
-        <button class="deletebutton"  @click="activeDeletecardView" > DELETE CARD</button> 
+        <button class="deletebutton"  @click="activecardView" > SHOW ACTIV CARD</button> 
         </div>
 </template>
 
@@ -30,7 +27,6 @@ export default {
         return{
             backgroundColor: '' ,
             activeView: '',
-            activeCard : 0,
         }
     },
     methods:{
@@ -38,21 +34,22 @@ export default {
             this.activeView = 2
             this.$emit('sendViewData',this.activeView )
         },
-        activeDeletecardView(){
-            this.activeView = 3
+        activecardView(){
+            this.activeView = 1
             this.$emit('sendViewData',this.activeView )
-        },
-        activCardProp(activeCard){
-             this.activeCard
-           // console.log(this.created[activeCard]);
-            return this.created[activeCard]
         },
          cardList(index){
             return this.created[index]
         },
-        showCard(index){
-           // console.log(index)
-            this.activeCard = index
+        deletecard(index){
+            let deletecard = this.created[index]
+            let confirmAction = confirm("Are you sure to Delete this Card?");
+            if (confirmAction) {
+            this.$emit('delete', deletecard )
+            alert("Card is successfully Deleted");
+            } else {
+            alert("Card is not deleted");
+            }
         },
 }
     
@@ -69,10 +66,10 @@ export default {
     background-color: white; 
     border: 1px solid black;
 }
-.active{
+/* .active{
     align-self: center;
     margin-bottom: 6rem;
-}
+} */
 h1, p{
     text-align: center;
     font-family: 'Source Sans Pro';
@@ -81,6 +78,7 @@ h1, p{
 .list{
     display: grid;
     align-self: center;
+    margin-top: 6rem;
     grid-template-rows: 6rem;
 
 }
@@ -90,8 +88,8 @@ h1, p{
     margin-top: 6rem;
     border-radius: 8px;
     color: white;
-    background-color: black;
     font-weight: bold;
+    background-color: black;
     font-family: 'PT Mono';
 }
 .deletebutton{
@@ -99,8 +97,8 @@ h1, p{
     height: 72PX;
     border-radius: 8px;
     color: white;
-    background-color: red;
     font-weight: bold;
+    background-color: black;
     font-family: 'PT Mono';
     margin-bottom: 1rem;
     margin-top: 00.50rem;

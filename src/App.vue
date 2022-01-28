@@ -3,13 +3,16 @@
  <!-- here i am calling my views -->
 <div id="app" class="app">
   <ActiveCard v-if="activeView === 1" :created="created" @sendViewData="viewData"/>
-  <AddCard v-else @send="addcard"/>
+  <DeleteCard v-if="activeView === 3"  :created="created" @sendViewData="viewData"
+  @delete="deletecard"/>
+  <AddCard    v-if="activeView === 2"  @send="addcard"/>
 </div>
 </template>
 
 <script>
 import AddCard from './view/AddCard'
 import ActiveCard from './view/ActiveCard'
+import DeleteCard from './view/DeleteCard'
   function sendDataLocalStorage(data){
   localStorage.setItem("cardData", JSON.stringify(data))
   }
@@ -22,6 +25,7 @@ export default {
       components: {
         AddCard,
         ActiveCard,
+        DeleteCard
         },
       data(){
         //localStorage.removeItem("cardData");
@@ -43,15 +47,23 @@ export default {
           [...this.card] = JSON.parse(data)
         }
         return this.card
-        },
-        data(){
-          return this.activeView
         }
       },
       methods:{
-        viewData(sendViewData){
-          this.activeView = sendViewData
-          return this.activeView
+
+        viewData(receivedview){
+          return this.activeView = receivedview
+        },
+        deletecard(deltecarddata){
+          let localobj = []
+          localobj = getData()
+          if(localobj){
+          localobj = JSON.parse(localobj)
+          localobj =[...localobj]
+          const  result  = localobj.filter( deleteCard => deleteCard.cardnumber !=deltecarddata.cardnumber)
+          this.card = result
+          sendDataLocalStorage(this.card)
+          }
         },
         addcard(cardData){
 

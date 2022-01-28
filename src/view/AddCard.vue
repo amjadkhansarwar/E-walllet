@@ -14,9 +14,9 @@
         v-model="card.cardnumber"
         pattern="[0-9]"
         required>
-        <span v-if="errors.length">
+        <ul v-if="errors.length">
         <li v-for="(error,index) in errors" :key="index">{{ error }}</li>
-        </span>
+        </ul>
         <span> CARDHOLDER NAME</span>
         <input type="text" onkeypress="return /[a-z]/i.test(event.key)" 
         placeholder="FRISTNAME  LASTNAME"
@@ -121,7 +121,7 @@ label{
     grid-column-start: 2;
     grid-column-end: 3;
 }
-input, .select, button, li{
+input, .select, button, ul{
     grid-column-start: 1;
     grid-column-end: 3;
  }
