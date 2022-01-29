@@ -44,14 +44,14 @@ export default {
         },
         activCardProp(activeCard){
              this.activeCard
-           // console.log(this.created[activeCard]);
+           console.log(this.created[activeCard]);
             return this.created[activeCard]
         },
          cardList(index){
             return this.created[index]
         },
         showCard(index){
-           // console.log(index)
+           console.log(index)
             this.activeCard = index
         },
 }

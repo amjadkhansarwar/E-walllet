@@ -3,11 +3,14 @@
       <img class="image1" :src="require('../assets/wifi_white.svg')" alt="" >
       <img class="image2"   id="img" width="40" height="40">
       <img class="image3" :src="require('../assets/chip.svg')" alt=""   width="40" height="40">
-      <h3 class="cardNumber">{{cardProp.cardnumber}}</h3>
+      <h3 class="cardNumber" v-if="cardProp.cardnumber">{{cardProp.cardnumber}}</h3>
+      <h3 class="cardNumber" v-else>XXXX XXXX XXXX XXXX</h3>
       <p> CARDHOLDER NAME </p>
       <p> VALID THRU </p>
-      <p>{{cardProp.name}}</p>
-      <p>{{cardProp.month}}/{{cardProp.year}}</p>
+      <p v-if="cardProp.name">{{cardProp.name.toUpperCase()}}</p>
+      <p v-else>Amjad</p>
+      <p v-if="cardProp.month">{{cardProp.month}} /{{cardProp.year}}</p>
+      <p v-else>MM/YY</p>
   </div>
 </template>
 
@@ -16,6 +19,7 @@ export default {
     props:[
         'cardProp'
         ],
+
         data(){
             return{
                 activeView: 1,
@@ -27,7 +31,7 @@ export default {
                 vendor:''
             }
           }
-    }
+        }
 }
 </script>
 
@@ -49,9 +53,6 @@ export default {
 .image1, .image3 {
     padding-left: 1rem;
     justify-self: start;
-}
-.image3{
-    /* background-color: white; */
 }
 .image2{
     justify-self: end;
